@@ -1,15 +1,20 @@
 public class Employee {
-    private int id = 1;
+    private final int id;
+    private static int counter;
     private final String fullName;
     private int department;
     private int salary;
 
     public Employee(String name, int department, int salary){
-        this.id = id;
-        id ++;
+        this.id = counter;
+        plusOne();
         this.fullName = name;
         this.department = department;
         this.salary = salary;
+    }
+
+    public final void plusOne(){
+        counter ++;
     }
 
     public int getId(){
